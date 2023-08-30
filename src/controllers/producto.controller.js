@@ -26,7 +26,7 @@ const crearProducto = async (req, res, next) => {
         });
 
         await nuevoProducto.save();
-        return res.json({ mensaje: 'producto registrado con exito!' })
+        return res.json({ mensaje: 'producto registrado con exito!' });
 
     } catch (error) {
         return next(error);
@@ -36,7 +36,7 @@ const crearProducto = async (req, res, next) => {
 const obtenerProducto = async (req, res, next) => {
     try {
         const platillos = await Producto.find().hint({ $natural: -1 });
-        return res.json(platillos);
+        return await res.json(platillos);
     } catch (error) {
         return next(error);
     }

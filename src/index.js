@@ -9,6 +9,7 @@ const fileUpload = require('express-fileupload');
 //Rutas
 const usuarioRoutes = require('./routes/usuario.routes');
 const productoRoutes = require('./routes/producto.routes');
+const pedidoRoutes = require('./routes/pedido.routes');
 
 //Conexion database
 require('./database/mongoose');
@@ -40,6 +41,7 @@ app.use(fileUpload({
 //Rutas
 app.use(usuarioRoutes);
 app.use(productoRoutes);
+app.use(pedidoRoutes);
 
 io.on('connection', socket => {
     // console.log(socket.id);

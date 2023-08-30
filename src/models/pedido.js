@@ -2,10 +2,10 @@ const { Schema, model } = require('mongoose');
 
 const pedidoSchema = new Schema(
     {
-        fecha: { type: Date, require: true},
-        hora: { type: Date, require: true},
-        cantidad: { type: Number, require: true, length: 5 },
-        total: { type: Number, require: true, length: 6 }
+        tiempoentrega: { type: Number, require: true },
+        completado: { type: Boolean, require: true },
+        total: { type: Number, require: true },
+        orden: { type: Array, require: true }
     },
     {
         timestamps: true
